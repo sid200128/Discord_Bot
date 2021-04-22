@@ -1,7 +1,6 @@
 require('dotenv').config();
 const fs = require("fs");
 const Discord = require('discord.js');
-const { DefaultDeserializer } = require('v8');
 const client = new Discord.Client();
 const Token = process.env.TOKEN;
 const prefix = process.env.PREFIX;

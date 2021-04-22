@@ -6,10 +6,11 @@ module.exports = {
   args: true,
   usage: "@user",
   execute(msg, args){
-    if(!message.mentions.users.size){
-		  return message.reply('you need to tag a user in order to kick them!');
+    if(!msg.mentions.users.size){
+		  return msg.reply('you need to tag a user in order to kick them!');
 		}
-    const taggedUser = msg.mentions.users.first();
-    msg.reply(`You wanted to kick: ${taggedUser}`);
+    const taggedUser = msg.mentions.members.first();
+    msg.reply(`Kicked User: ${taggedUser.username}`);
+    taggedUser.kick();
   }
 }
